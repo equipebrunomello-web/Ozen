@@ -149,42 +149,6 @@
     margin-bottom:18px;
   }
 
-  /* ---- Share row ---- */
-  .share-row{
-    display:flex;
-    gap:10px;
-    margin-bottom:22px;
-  }
-  .share-btn{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    background:var(--paper-alt);
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:12px;
-    font-size:13px;
-    font-weight:600;
-    color:var(--ink);
-    cursor:default;
-  }
-  .share-btn .ic{
-    width:18px;height:18px;
-    border-radius:50%;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    font-size:11px;
-    font-weight:800;
-    color:#fff;
-    flex-shrink:0;
-  }
-  .ic.fb{background:#3B5998;}
-  .ic.wa{background:#25D366;}
-  .ic.sh{background:#8A8A8A;}
-
   /* ---- Ver resumo accordion ---- */
   details.summary-box{
     border:1px solid var(--line);
@@ -462,10 +426,24 @@
     padding:18px;
     background:#fff;
     text-align:center;
+    position:relative;
   }
   .kit-card.featured{
     border-color:var(--brand-red);
     box-shadow:0 0 0 1px var(--brand-red);
+    padding-top:30px;
+  }
+  .kit-ribbon{
+    position:absolute;
+    top:0;left:0;right:0;
+    background:var(--brand-red);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:5px;
+    border-radius:8px 8px 0 0;
   }
   .kit-card .kit-name{
     font-weight:800;
@@ -473,7 +451,34 @@
     text-transform:uppercase;
     letter-spacing:.04em;
     color:var(--brand-red-dark);
-    margin-bottom:8px;
+    margin-bottom:6px;
+  }
+  .kit-card .kit-tag{
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+    background:var(--ink);
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:100px;
+    margin-bottom:14px;
+  }
+  .kit-card .kit-price{
+    font-size:22px;
+    font-weight:800;
+    color:var(--ink);
+    margin:0;
+  }
+  .kit-card .kit-price-sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:2px 0 8px;
+  }
+  .kit-card .kit-discount{
+    font-size:13px;
+    font-weight:700;
+    color:var(--teal-deep);
+    margin:0 0 12px;
   }
   .kit-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
   .cta-wrap{
@@ -550,12 +555,6 @@
   <div class="byline">Por <a href="#">Equipe de Saúde e Bem-Estar</a> — Redação</div>
   <div class="byline-date">17/07/2026 09h40 · Atualizado recentemente</div>
 
-  <div class="share-row">
-    <span class="share-btn"><span class="ic fb">f</span> Facebook</span>
-    <span class="share-btn"><span class="ic wa">✆</span> WhatsApp</span>
-    <span class="share-btn"><span class="ic sh">↗</span> Compartilhar</span>
-  </div>
-
   <details class="summary-box">
     <summary>Ver resumo</summary>
     <div class="summary-body">
@@ -567,8 +566,8 @@
     </div>
   </details>
 
-  <figure class="hero-slot" id="slot-hero">
-    <span class="slot-label">Espaço reservado — imagem ou vídeo de capa</span>
+  <figure class="real-img" id="slot-hero" style="margin:0 0 30px;">
+    <img src="https://raw.githubusercontent.com/equipebrunomello-web/Ozen/main/imagem%20de%20capa.jpg" alt="Mulher observando o próprio corpo no espelho, refletindo sobre o processo de emagrecimento" style="width:100%;border-radius:6px;">
   </figure>
 </header>
 
@@ -793,30 +792,49 @@
   <p>Por isso, a orientação é verificar as condições diretamente no canal oficial indicado pelo fabricante.</p>
 
   <h2 class="section-head">Qual opção apresenta o melhor custo-benefício?</h2>
-  <p>O fabricante costuma disponibilizar kits com diferentes quantidades de frascos. Quanto maior o kit, menor tende a ser o valor pago por unidade.</p>
+  <p>O fabricante costuma disponibilizar kits com diferentes quantidades de frascos. Quanto maior o kit, menor tende a ser o valor pago por unidade — e a partir de determinada quantidade de frascos, o próprio fabricante libera bônus digitais sem custo adicional.</p>
 
   <div class="kits">
     <div class="kit-card">
-      <div class="kit-name">Kit inicial</div>
-      <p>Voltado para quem deseja conhecer o produto e observar a adaptação do organismo.</p>
+      <div class="kit-name">Pote único</div>
+      <p class="kit-tag">Suplemento para 30 dias</p>
+      <p class="kit-price">12x de R$14,76</p>
+      <p class="kit-price-sub">ou R$147 à vista no pix</p>
+      <p class="kit-discount">Desconto de R$20,00</p>
+      <p>Voltado para quem deseja conhecer o produto e observar a adaptação do organismo antes de comprometer-se com um período mais longo.</p>
     </div>
     <div class="kit-card featured">
-      <div class="kit-name">Kit intermediário</div>
-      <p>Indicado para quem pretende manter uma rotina de utilização por alguns meses.</p>
+      <div class="kit-ribbon">Opção recomendada</div>
+      <div class="kit-name">Pacote econômico</div>
+      <p class="kit-tag">Leve 3, pague 2 (90 dias)</p>
+      <p class="kit-price">12x de R$19,78</p>
+      <p class="kit-price-sub">ou R$197 à vista no pix</p>
+      <p class="kit-discount">Desconto de R$284,00</p>
+      <p>Indicado para quem pretende manter uma rotina de utilização por alguns meses — quantidade suficiente para já se qualificar aos bônus digitais.</p>
     </div>
     <div class="kit-card">
-      <div class="kit-name">Kit completo</div>
-      <p>Normalmente apresenta o menor custo por frasco e evita interrupções durante o período de uso.</p>
+      <div class="kit-name">Pacote familiar</div>
+      <p class="kit-tag">Leve 5, pague 3 (150 dias)</p>
+      <p class="kit-price">12x de R$24,80</p>
+      <p class="kit-price-sub">ou R$247 à vista no pix</p>
+      <p class="kit-discount">Desconto de R$547,00</p>
+      <p>Normalmente apresenta o menor custo por frasco, evita interrupções durante o período de uso e acumula todos os bônus disponíveis.</p>
     </div>
   </div>
 
-  <figure class="img-slot" id="slot-kits">
-    <span class="slot-label">Espaço reservado — imagem dos kits</span>
-    [INSERIR IMAGEM DOS KITS]
-    <figcaption>Os valores, o frete e a quantidade de frascos devem ser conferidos diretamente na página oficial.</figcaption>
-  </figure>
+  <p>Todas as opções contam com frete grátis para todo o Brasil, segundo as condições vigentes no site oficial.</p>
 
-  <p>A melhor opção depende do objetivo, do orçamento e das condições oferecidas no momento da compra.</p>
+  <div class="ingredient-card">
+    <h3>Peça mais de 3 frascos e ganhe bônus gratuitos</h3>
+    <p style="margin-bottom:16px;color:var(--ink-soft);font-size:15px;">Segundo o material do fabricante, quem opta pelo pacote econômico ou pelo pacote familiar recebe, sem custo adicional, os seguintes materiais digitais:</p>
+    <ul class="check">
+      <li><strong>Método Anti Flacidez</strong> — guia com estratégias para lidar com a flacidez após o emagrecimento</li>
+      <li><strong>Cardápio Completo</strong> — e-book com café da manhã, almoço e jantar, além de receitas prontas</li>
+      <li><strong>Diga Adeus à Celulite</strong> — material com orientações voltadas à aparência da pele</li>
+    </ul>
+  </div>
+
+  <p>A melhor opção depende do objetivo, do orçamento e das condições oferecidas no momento da compra. Antes de finalizar, confira sempre os valores, o frete e os bônus atualizados diretamente na página oficial — o fabricante pode alterá-los sem aviso prévio.</p>
 
   <h2 class="section-head">Uma condição disponibilizada aos leitores</h2>
   <p>Neste momento, é possível consultar os kits disponíveis, verificar os descontos progressivos e conferir as condições atuais diretamente no site oficial. Os valores e a disponibilidade podem ser modificados pelo fabricante sem aviso prévio.</p>
@@ -837,7 +855,7 @@
   <p>O material comercial do Ozenvitta apresenta uma política de garantia. Entretanto, o prazo e as regras devem ser confirmados no momento da compra.</p>
   <p>Antes de finalizar o pedido, verifique:</p>
   <ul class="check">
-    <li>Quantos dias de garantia estão disponíveis <em>[INSERIR PRAZO OFICIAL DA GARANTIA]</em></li>
+    <li>Quantos dias de garantia estão disponíveis</li>
     <li>Como solicitar o reembolso</li>
     <li>Se é necessário devolver os frascos</li>
     <li>Quem é responsável pelos custos de envio</li>
